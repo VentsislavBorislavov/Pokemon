@@ -3,12 +3,18 @@ package abilities;
 import pokemon.Type;
 
 public class FireBreath implements Ability {
+    private static final String NAME = "Fire Breath";
+
     @Override
-    public double dealDamage(int damage, Type attackedPokemonType) {
+    public int dealDamage(int damage, Type attackedPokemonType) {
         if (attackedPokemonType == Type.WATER)
-            return damage * 0.1;
+            return (int) (damage * 0.1);
         if (attackedPokemonType == Type.PLANT)
-            return damage * 0.8;
-        else return damage * 0.5;
+            return (int) (damage * 0.8);
+        else return (int) (damage * 0.5);
+    }
+
+    public static String getNAME() {
+        return NAME;
     }
 }
