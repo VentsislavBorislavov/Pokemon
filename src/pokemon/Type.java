@@ -1,6 +1,10 @@
 package pokemon;
 
 public enum  Type {
- EARTH,AQUA,AIR,FIRE
+ EARTH,
+ WATER,
+ AIR,
+ FIRE,
+ PLANT
 
 }

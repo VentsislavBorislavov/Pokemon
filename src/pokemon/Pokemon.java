@@ -3,7 +3,7 @@ package pokemon;
 public abstract class Pokemon {
     protected String defaultName;
     protected String name = "";
-    protected int health;
+    protected double health;
     protected int defence;
     protected int attack;
     protected double height;
@@ -19,7 +19,7 @@ public abstract class Pokemon {
         } else return name;
     }
 
-    public int getHealth() {
+    public double getHealth() {
         return health;
     }
 
@@ -47,8 +47,5 @@ public abstract class Pokemon {
         this.name = name;
     }
 
-    public void resetName() {
-        name = "";
-    }
-
+    public abstract void takeDamage(int damage, Type type);
 }
