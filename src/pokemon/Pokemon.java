@@ -1,14 +1,18 @@
 package pokemon;
 
+import abilities.Ability;
+import abilities.FireBreath;
+
 public abstract class Pokemon {
     protected String defaultName;
     protected String name = "";
-    protected int health;
+    protected double health;
     protected int defence;
     protected int attack;
     protected double height;
     protected double weight;
     protected Type type;
+    protected Ability fireBreath = new FireBreath();
 
     public Pokemon() {
     }
@@ -19,7 +23,7 @@ public abstract class Pokemon {
         } else return name;
     }
 
-    public int getHealth() {
+    public double getHealth() {
         return health;
     }
 
@@ -47,8 +51,11 @@ public abstract class Pokemon {
         this.name = name;
     }
 
-    public void resetName() {
-        name = "";
+    public void takeDamage(int damage) {
+        health -= damage;
     }
-
+//This should be moved to a special class for a certain Pokemon
+    public double useFireBreath(Type attackedPokemonType) {
+        return fireBreath.dealDamage(attack, attackedPokemonType);
+    }
 }
