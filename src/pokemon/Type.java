@@ -5,7 +5,5 @@ public enum  Type {
  WATER,
  AIR,
  FIRE,
- PLANT,
- NONE
-
+ PLANT
 }

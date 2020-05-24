@@ -14,6 +14,7 @@ public class FireBreath implements Ability {
         else return (int) (damage * 0.5);
     }
 
+    @Override
     public String abilityName() {
         return "Fire Breath";
     }

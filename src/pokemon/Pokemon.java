@@ -6,7 +6,7 @@ import abilities.Punch;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Pokemon {
+public class Pokemon {
     protected String defaultName;
     protected String name = "";
     protected int health;
@@ -18,20 +18,6 @@ public abstract class Pokemon {
     protected int maxHP;
     protected Size size;
     protected List<Ability> abilityList = new ArrayList<>();
-
-    public Pokemon(String defaultName, int health, int defence, int attack, double height, double weight, Type type, Size size) {
-        this.defaultName = defaultName;
-        this.health = health;
-        this.maxHP = health;
-        this.defence = defence;
-        this.attack = attack;
-        this.height = height;
-        this.weight = weight;
-        this.type = type;
-        this.size = size;
-
-        abilityList.add(new Punch());
-    }
 
     public Pokemon(String defaultName, int health, int defence, int attack, double height, double weight, Type type, Size size, Ability secondAbility) {
         this.defaultName = defaultName;
@@ -93,10 +79,4 @@ public abstract class Pokemon {
     public void takeDamage(int damage) {
         health -= damage;
     }
-
-    public double punch() {
-        return abilityList.get(0).dealDamage(attack, Type.NONE);
-    }
-
-    public abstract int useAbility1(Type attackedPokemonType);
 }

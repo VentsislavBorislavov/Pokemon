@@ -1,7 +1,7 @@
 package pokemon;
 
 public class PokemonMenu {
-    private void printPokemonStats(Pokemon pokemon) {
+    public void printPokemonStats(Pokemon pokemon) {
         System.out.println(
                 pokemon.getName() + " stats: \n" +
                         "Type: " + pokemon.getType() + "\n" +
@@ -14,14 +14,14 @@ public class PokemonMenu {
         );
     }
 
-    private void printPokemonAbilities(Pokemon pokemon) {
+    public void printPokemonAbilities(Pokemon pokemon) {
         for (int i = 0; i < pokemon.getAbilityList().size(); i++) {
             System.out.println(i + 1 + " " + pokemon.getAbilityList().get(i).abilityName());
         }
     }
 
-    private void useAbility(Pokemon pokemon,int choice, Type enemyType){
-        pokemon.getAbilityList().get(choice).dealDamage(pokemon.getAttack(),enemyType);
+    public int useAbility(Pokemon pokemon,int choice, Type enemyType){
+       return pokemon.getAbilityList().get(choice).dealDamage(pokemon.getAttack(),enemyType);
     }
 
 }
