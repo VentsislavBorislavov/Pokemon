@@ -8,11 +8,11 @@ public class Bulbasaur extends Pokemon {
 
     public Bulbasaur(int health, int defence, int attack, double height, double weight, Size size) {
         super(DEFAULT_NAME, health, defence, attack, height, weight, TYPE, size);
-        abilities.add(new Overgrow());
+        abilityList.add(new Overgrow());
     }
 
     @Override
     public int useAbility1(Type attackedPokemonType) {
-       return abilities.get(1).dealDamage(attack, attackedPokemonType);
+       return abilityList.get(1).dealDamage(attack, attackedPokemonType);
     }
 }

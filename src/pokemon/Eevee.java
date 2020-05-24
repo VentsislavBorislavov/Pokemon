@@ -8,11 +8,11 @@ public class Eevee extends Pokemon {
 
     public Eevee(String defaultName, int health, int defence, int attack, double height, double weight, Type type, Size size) {
         super(defaultName, health, defence, attack, height, weight, type, size);
-        abilities.add(new AirStrike());
+        abilityList.add(new AirStrike());
     }
 
     @Override
     public int useAbility1(Type attackedPokemonType) {
-        return abilities.get(1).dealDamage(attack, attackedPokemonType);
+        return abilityList.get(1).dealDamage(attack, attackedPokemonType);
     }
 }

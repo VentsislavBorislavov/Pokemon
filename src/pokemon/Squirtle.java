@@ -8,11 +8,11 @@ public class Squirtle extends Pokemon {
 
     public Squirtle(int health, int defence, int attack, double height, double weight, Size size) {
         super(DEFAULT_NAME, health, defence, attack, height, weight, Type.WATER, size);
-        abilities.add(new Torrent());
+        abilityList.add(new Torrent());
     }
 
     @Override
     public int useAbility1(Type attackedPokemonType) {
-        return abilities.get(1).dealDamage(attack, attackedPokemonType);
+        return abilityList.get(1).dealDamage(attack, attackedPokemonType);
     }
 }

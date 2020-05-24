@@ -12,4 +12,9 @@ public class Overgrow implements Ability{
             return (int) (damage * 0.8);
         else return (int) (damage * 0.5);
     }
+
+    @Override
+    public String abilityName() {
+        return "Overgrow";
+    }
 }

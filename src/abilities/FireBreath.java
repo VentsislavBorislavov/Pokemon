@@ -3,7 +3,7 @@ package abilities;
 import pokemon.Type;
 
 public class FireBreath implements Ability {
-    private static final String NAME = "Fire Breath";
+
 
     @Override
     public int dealDamage(int damage, Type attackedPokemonType) {
@@ -14,7 +14,7 @@ public class FireBreath implements Ability {
         else return (int) (damage * 0.5);
     }
 
-    public static String getNAME() {
-        return NAME;
+    public String abilityName() {
+        return "Fire Breath";
     }
 }

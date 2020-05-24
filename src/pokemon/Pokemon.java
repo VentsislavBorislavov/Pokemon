@@ -16,8 +16,8 @@ public abstract class Pokemon {
     protected double weight;
     protected Type type;
     protected int maxHP;
-    Size size;
-    protected List<Ability> abilities = new ArrayList<>();
+    protected Size size;
+    protected List<Ability> abilityList = new ArrayList<>();
 
     public Pokemon(String defaultName, int health, int defence, int attack, double height, double weight, Type type, Size size) {
         this.defaultName = defaultName;
@@ -30,13 +30,36 @@ public abstract class Pokemon {
         this.type = type;
         this.size = size;
 
-        abilities.add(new Punch());
+        abilityList.add(new Punch());
+    }
+
+    public Pokemon(String defaultName, int health, int defence, int attack, double height, double weight, Type type, Size size, Ability secondAbility) {
+        this.defaultName = defaultName;
+        this.health = health;
+        this.maxHP = health;
+        this.defence = defence;
+        this.attack = attack;
+        this.height = height;
+        this.weight = weight;
+        this.type = type;
+        this.size = size;
+
+        abilityList.add(new Punch());
+        abilityList.add(secondAbility);
     }
 
     public String getName() {
         if (name.equals("")) {
             return defaultName;
         } else return name;
+    }
+
+    public List<Ability> getAbilityList() {
+        return abilityList;
+    }
+
+    public Size getSize() {
+        return size;
     }
 
     public double getHealth() {
@@ -72,7 +95,7 @@ public abstract class Pokemon {
     }
 
     public double punch() {
-        return abilities.get(0).dealDamage(attack,Type.NONE);
+        return abilityList.get(0).dealDamage(attack, Type.NONE);
     }
 
     public abstract int useAbility1(Type attackedPokemonType);

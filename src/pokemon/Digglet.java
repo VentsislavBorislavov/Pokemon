@@ -8,11 +8,11 @@ public class Digglet extends Pokemon {
 
     public Digglet(String defaultName, int health, int defence, int attack, double height, double weight, Type type, Size size) {
         super(defaultName, health, defence, attack, height, weight, type, size);
-        abilities.add(new SandForce());
+        abilityList.add(new SandForce());
     }
 
     @Override
     public int useAbility1(Type attackedPokemonType) {
-        return abilities.get(1).dealDamage(attack, attackedPokemonType);
+        return abilityList.get(1).dealDamage(attack, attackedPokemonType);
     }
 }
