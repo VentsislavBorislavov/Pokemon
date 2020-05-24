@@ -9,24 +9,27 @@ import java.util.List;
 public abstract class Pokemon {
     protected String defaultName;
     protected String name = "";
-    protected double health;
+    protected int health;
     protected int defence;
     protected int attack;
     protected double height;
     protected double weight;
     protected Type type;
+    protected int maxHP;
     Size size;
     protected List<Ability> abilities = new ArrayList<>();
 
-    public Pokemon(String defaultName, double health, int defence, int attack, double height, double weight, Type type, Size size) {
+    public Pokemon(String defaultName, int health, int defence, int attack, double height, double weight, Type type, Size size) {
         this.defaultName = defaultName;
         this.health = health;
+        this.maxHP = health;
         this.defence = defence;
         this.attack = attack;
         this.height = height;
         this.weight = weight;
         this.type = type;
         this.size = size;
+
         abilities.add(new Punch());
     }
 

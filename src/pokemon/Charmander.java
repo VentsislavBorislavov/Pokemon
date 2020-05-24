@@ -8,7 +8,7 @@ public class Charmander extends Pokemon {
     private static final String DEFAULT_NAME = "Charmander";
 
 
-    public Charmander(double health, int defence, int attack, double height, double weight, Size size) {
+    public Charmander(int health, int defence, int attack, double height, double weight, Size size) {
         super(DEFAULT_NAME, health, defence, attack, height, weight, TYPE, size);
         abilities.add(new FireBreath());
     }
