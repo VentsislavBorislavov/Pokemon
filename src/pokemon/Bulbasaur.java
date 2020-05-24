@@ -13,6 +13,6 @@ public class Bulbasaur extends Pokemon {
 
     @Override
     public int useAbility1(Type attackedPokemonType) {
-        abilities.get(1).dealDamage(attack, attackedPokemonType);
+       return abilities.get(1).dealDamage(attack, attackedPokemonType);
     }
 }
