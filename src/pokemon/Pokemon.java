@@ -1,26 +1,51 @@
 package pokemon;
 
 import abilities.Ability;
-import abilities.FireBreath;
+import abilities.Punch;
 
-public abstract class Pokemon {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Pokemon {
     protected String defaultName;
     protected String name = "";
-    protected double health;
+    protected int health;
     protected int defence;
     protected int attack;
     protected double height;
     protected double weight;
     protected Type type;
-    protected Ability fireBreath = new FireBreath();
+    protected int maxHP;
+    protected Size size;
+    protected List<Ability> abilityList = new ArrayList<>();
 
-    public Pokemon() {
+    public Pokemon(String defaultName, int health, int defence, int attack, double height, double weight, Type type, Size size, Ability secondAbility) {
+        this.defaultName = defaultName;
+        this.health = health;
+        this.maxHP = health;
+        this.defence = defence;
+        this.attack = attack;
+        this.height = height;
+        this.weight = weight;
+        this.type = type;
+        this.size = size;
+
+        abilityList.add(new Punch());
+        abilityList.add(secondAbility);
     }
 
     public String getName() {
         if (name.equals("")) {
             return defaultName;
         } else return name;
+    }
+
+    public List<Ability> getAbilityList() {
+        return abilityList;
+    }
+
+    public Size getSize() {
+        return size;
     }
 
     public double getHealth() {
@@ -53,9 +78,5 @@ public abstract class Pokemon {
 
     public void takeDamage(int damage) {
         health -= damage;
-    }
-//This should be moved to a special class for a certain Pokemon
-    public double useFireBreath(Type attackedPokemonType) {
-        return fireBreath.dealDamage(attack, attackedPokemonType);
     }
 }

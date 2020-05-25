@@ -6,5 +6,4 @@ public enum  Type {
  AIR,
  FIRE,
  PLANT
-
 }

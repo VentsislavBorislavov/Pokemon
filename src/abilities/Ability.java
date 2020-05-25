@@ -3,5 +3,6 @@ package abilities;
 import pokemon.Type;
 
 public interface Ability {
-    double dealDamage(int damage, Type attackedPokemonType);
+    int dealDamage(int damage, Type attackedPokemonType);
+    String abilityName();
 }
