@@ -8,10 +8,10 @@ public class Player {
     private int crystals;
     private List<Pokemon> pokemons = new ArrayList<>();
 
+
     public void addPokemon(Pokemon pokemon){
         pokemons.add(pokemon);
     }
-    //TODO pokemon chooser
 
     public String getPlayerName() {
         return playerName;
@@ -36,5 +36,6 @@ public class Player {
     public void removePokemon(Pokemon pokemon){
         pokemons.remove(pokemon);
     }
+
 
 }

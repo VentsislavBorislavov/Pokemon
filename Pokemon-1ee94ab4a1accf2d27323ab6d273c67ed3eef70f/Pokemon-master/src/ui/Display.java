@@ -1,39 +1,53 @@
 package ui;
 
-import abilities.FireBreath;
-import abilities.Punch;
 import pokemon.Player;
-import pokemon.Pokemon;
-import pokemon.PokemonName;
 
 import javax.swing.*;
 
 public class Display extends JFrame {
-    private Pokemon charmander;
-    private Player player = new Player();
+
+    private Player player;
     private Timer timer;
     private ArenaPanel arenaPanel;
+    private PokemonChooser chooserP;
+    private PlayPanel playPanel;
 
     public Display() throws Exception {
-       setUpDisplay();
+        setUpDisplay();
     }
 
     private void setUpDisplay() throws Exception {
-        setSize(Constants.GAME_WIDTH,Constants.GAME_HEIGHT);
-        charmander = new Pokemon("Charmander",30,30,30,pokemon.Type.FIRE,new Punch(),new FireBreath(), PokemonName.CHARMANDER);
+
+        playPanel = new PlayPanel();
+        player = new Player();
+        arenaPanel = new ArenaPanel(player);
+        chooserP = new PokemonChooser(player);
+
+        setSize(Constants.GAME_WIDTH, Constants.GAME_HEIGHT);
         setTitle("Pokemon Tournament");
         setIconImage(new ImageIcon(Constants.POKEMON_ICON_URL).getImage());
-        arenaPanel= new ArenaPanel(charmander);
-//        setContentPane(arenaPanel);
-        add(arenaPanel);
         setResizable(false);
         setVisible(true);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        timer = new Timer(100,new GameLoop(this));
+
+        timer = new Timer(100, new GameLoop(this));
+        timer.start();
+        setContentPane(playPanel);
     }
 
     public void doOneLoop() {
-        System.out.println(arenaPanel.getPokemonHealth());
+        if (arenaPanel.isOver()) {
+            setContentPane(chooserP);
+            this.player = chooserP.getPlayer();
+        }
+        if (chooserP.hasPlayerPickedLoadout()) {
+            setContentPane(arenaPanel);
+
+        }
+        if(playPanel.isGameStarted()){
+            setContentPane(chooserP);
+            playPanel.setGameStarted();
+        }
+        }
     }
-}

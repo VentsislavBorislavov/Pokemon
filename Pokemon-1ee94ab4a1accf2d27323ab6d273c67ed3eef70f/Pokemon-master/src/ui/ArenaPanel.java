@@ -1,10 +1,10 @@
 package ui;
 
+import pokemon.Player;
 import pokemon.Pokemon;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
 public class ArenaPanel extends JPanel {
 
@@ -12,20 +12,22 @@ public class ArenaPanel extends JPanel {
     private AbilityButton ablitiyButton2;
     private JPanel dialoguePanel;
     private JLabel dialogueLabel;
-    private Pokemon pokemon;
     private JLabel pokemonPicLbl;
-    Timer timer;
+    private Player player;
+    private boolean isOver = false;
+    private int indexOfPokemon = 0;
+    private Timer timer;
+    private Pokemon pokemon;
 
-    public ArenaPanel(Pokemon pokemon) throws Exception {
-        this.pokemon = pokemon;
+    public ArenaPanel(Player player) throws Exception {
+        this.player = player;
         setPreferredSize(new Dimension(Constants.GAME_WIDTH, Constants.GAME_HEIGHT));
         setLayout(null);
-        String ability1Name = pokemon.getAbilityList().get(0).getAbilityName();
-        String ability2Name = pokemon.getAbilityList().get(1).getAbilityName();
 
-        abilityButton1 = new AbilityButton(400,400,100,30);
-        abilityButton1.addActionListener(e -> pokemon.takeDamage(30));
-        ablitiyButton2 = new AbilityButton(400,440,100,30);
+        abilityButton1 = new AbilityButton(400, 400, 100, 30);
+        abilityButton1.addActionListener(e -> System.out.println("Clicked"));
+        ablitiyButton2 = new AbilityButton(400, 440, 100, 30);
+        ablitiyButton2.addActionListener(e -> System.out.println("Clicked"));
 
         dialogueLabel = new JLabel();
         dialogueLabel.setBounds(60, 400, 310, 70);
@@ -35,30 +37,38 @@ public class ArenaPanel extends JPanel {
         dialoguePanel.setBounds(40, 400, 310, 70);
         dialoguePanel.setBackground(Color.GRAY);
 
-        pokemonPicLbl = new JLabel(new ImageIcon(PokemonImageCreator.getPokemonImage(pokemon.getPokemonName())));
+        pokemonPicLbl = new JLabel(new ImageIcon(Constants.PIKACHU_IMAGE_URL));
         pokemonPicLbl.setBounds(40, 180, 180, 180);
 
-        timer = new Timer(10,new GameLoop(this));
-        timer.start();
+        timer = new Timer(10, new GameLoop(this));
 
         add(dialogueLabel);
         add(dialoguePanel);
         add(abilityButton1);
         add(ablitiyButton2);
         add(pokemonPicLbl);
+
+        timer.start();
     }
 
 
     public void doOneLoop() {
         update();
     }
-    private void update(){
-        pokemonPicLbl.setIcon(new ImageIcon(PokemonImageCreator.getPokemonImage(pokemon.getPokemonName())));
-        abilityButton1.setText(pokemon.getAbilityList().get(0).getAbilityName());
-        ablitiyButton2.setText(pokemon.getAbilityList().get(1).getAbilityName());
+
+    private void update() {
+        if(player.getPokemons().size()>0) {
+            pokemon = player.getPokemons().get(indexOfPokemon);
+            pokemonPicLbl.setIcon(new ImageIcon(PokemonImageCreator.getPokemonImage(pokemon.getPokemonName())));
+            abilityButton1.setText(pokemon.getAbilityList().get(0).getAbilityName());
+            ablitiyButton2.setText(pokemon.getAbilityList().get(1).getAbilityName());
+            if (pokemon.getHealth() == 0) {
+                isOver = true;
+            }
+        }
     }
 
-    public int getPokemonHealth(){
-        return (int) pokemon.getHealth();
+    public boolean isOver() {
+        return isOver;
     }
 }
