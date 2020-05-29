@@ -2,28 +2,23 @@ package ui;
 
 import pokemon.Pokemon;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
 
-public class ArenaPanel extends JPanel implements Runnable {
+public class ArenaPanel extends JPanel {
 
     private AbilityButton abilityButton1;
     private AbilityButton ablitiyButton2;
     private JPanel dialoguePanel;
     private JLabel dialogueLabel;
-    private ImageIcon arenaImage;
-    private BufferedImage image;
-    private BufferedImage finalImage;
     private Pokemon pokemon;
-    JLabel picLabel;
+    private JLabel pokemonPicLbl;
+    Timer timer;
 
     public ArenaPanel(Pokemon pokemon) throws Exception {
         this.pokemon = pokemon;
         setPreferredSize(new Dimension(Constants.GAME_WIDTH, Constants.GAME_HEIGHT));
-        arenaImage = new ImageIcon(Constants.ARENA_IMAGE_URL);
         setLayout(null);
         String ability1Name = pokemon.getAbilityList().get(0).getAbilityName();
         String ability2Name = pokemon.getAbilityList().get(1).getAbilityName();
@@ -40,34 +35,30 @@ public class ArenaPanel extends JPanel implements Runnable {
         dialoguePanel.setBounds(40, 400, 310, 70);
         dialoguePanel.setBackground(Color.GRAY);
 
-        setImage();
-        picLabel = new JLabel(new ImageIcon(image));
-        picLabel.setBounds(40, 180, 180, 200);
+        pokemonPicLbl = new JLabel(new ImageIcon(PokemonImageCreator.getPokemonImage(pokemon.getPokemonName())));
+        pokemonPicLbl.setBounds(40, 180, 180, 180);
+
+        timer = new Timer(10,new GameLoop(this));
+        timer.start();
 
         add(dialogueLabel);
         add(dialoguePanel);
         add(abilityButton1);
         add(ablitiyButton2);
-        add(picLabel);
+        add(pokemonPicLbl);
     }
 
-    public void setImage() throws Exception {
-        try {
-            image = ImageIO.read(new File(PokemonImageCreator.getPokemonImage(pokemon.getPokemonName())));
-        } catch (Exception e) {
-        }
+
+    public void doOneLoop() {
+        update();
+    }
+    private void update(){
+        pokemonPicLbl.setIcon(new ImageIcon(PokemonImageCreator.getPokemonImage(pokemon.getPokemonName())));
+        abilityButton1.setText(pokemon.getAbilityList().get(0).getAbilityName());
+        ablitiyButton2.setText(pokemon.getAbilityList().get(1).getAbilityName());
     }
 
-    private void changePokemonView(){
-        try {
-            image = ImageIO.read(new File(Constants.BULBASAUR_IMAGE_URL));
-            picLabel = new JLabel(new ImageIcon(image));
-        } catch (Exception e) {
-        }
-    }
-
-    @Override
-    public void run() {
-
+    public int getPokemonHealth(){
+        return (int) pokemon.getHealth();
     }
 }

@@ -1,5 +1,8 @@
 package pokemon;
 
+import abilities.FireBreath;
+import abilities.Punch;
+
 public class Enemy {
     private String enemyName;
     private Pokemon enemyPokemon;
@@ -7,7 +10,7 @@ public class Enemy {
 
     public Enemy(String enemyName) {
         this.enemyName = enemyName;
-      this.enemyPokemon = pokemonsList.bulbasaur;
+      this.enemyPokemon = new Pokemon("Charmander",30,30,30,Type.FIRE,new Punch(),new FireBreath(),PokemonName.CHARMANDER) ;
     }
 
     public String getEnemyName() {
