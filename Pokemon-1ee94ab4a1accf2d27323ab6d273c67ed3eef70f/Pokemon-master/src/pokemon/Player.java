@@ -9,9 +9,15 @@ public class Player {
     public Player(String playerName) {
         this.playerName = playerName;
         this.crystals=0;
-        pokemons[0]=pokemonsList.getCharmander();
+       /* pokemons[0]=pokemonsList.getCharmander();
         pokemons[1]=pokemonsList.getPikachu();
-        pokemons[2]=pokemonsList.getSquirtle();
+        pokemons[2]=pokemonsList.getSquirtle();*/
+
+    }
+    public Player() {
+
+        this.crystals=0;
+
 
     }
 

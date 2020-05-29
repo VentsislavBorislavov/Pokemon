@@ -49,6 +49,10 @@ public class Pokemon {
         return size;
     }*/
 
+    public void setHealth(int health) {
+        this.health = health;}
+
+
     public double getHealth() {
         return health;
     }
@@ -83,5 +87,10 @@ public class Pokemon {
 
     public void takeDamage(int damage) {
         health -= damage;
+    }
+
+
+    public int getMaxHP() {
+        return maxHP;
     }
 }

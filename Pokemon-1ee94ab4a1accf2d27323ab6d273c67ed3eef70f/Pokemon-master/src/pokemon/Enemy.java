@@ -5,9 +5,9 @@ public class Enemy {
     private Pokemon enemyPokemon;
     private PokemonsList pokemonsList = new PokemonsList();
 
-    public Enemy(String enemyName) {
+    public Enemy(String enemyName,Pokemon pokemon) {
         this.enemyName = enemyName;
-      this.enemyPokemon = pokemonsList.bulbasaur;
+      this.enemyPokemon = pokemon;
     }
 
     public String getEnemyName() {
