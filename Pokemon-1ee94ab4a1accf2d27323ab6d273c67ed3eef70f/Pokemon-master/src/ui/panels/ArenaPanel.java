@@ -42,7 +42,7 @@ public class ArenaPanel extends JPanel {
         setPreferredSize(new Dimension(Constants.GAME_WIDTH, Constants.GAME_HEIGHT));
         setLayout(null);
 
-        pokemon = player.getPokemons().get(indexOfPokemon);
+//        pokemon = player.getPokemons().get(indexOfPokemon);
 
         switchBtn = new GameButton(400,360,100,30);
         switchBtn.setText("Switch");
@@ -55,7 +55,7 @@ public class ArenaPanel extends JPanel {
         abilityButton1 = new GameButton(400, 400, 100, 30);
         abilityButton1.addActionListener(e -> player.getPokemons().get(indexOfPokemon).takeDamage(10));
         ablitiyButton2 = new GameButton(400, 440, 100, 30);
-        ablitiyButton2.addActionListener(e -> System.out.println("Clicked"));
+        ablitiyButton2.addActionListener(e -> isOver = true);
 
         dialogueLabel = new JLabel();
         dialogueLabel.setBounds(60, 400, 310, 70);
@@ -68,7 +68,7 @@ public class ArenaPanel extends JPanel {
         pokemonPicLbl = new JLabel(new ImageIcon(Constants.PIKACHU_IMAGE_URL));
         pokemonPicLbl.setBounds(40, 180, 180, 180);
 
-        timer = new Timer(10, new GameLoop(this));
+        timer = new Timer(1000, new GameLoop(this));
 
         add(dialogueLabel);
         add(dialoguePanel);
@@ -88,7 +88,6 @@ public class ArenaPanel extends JPanel {
 
     private void update() {
         if (player.getPokemons().size() > 0) {
-
             pokemon = player.getPokemons().get(indexOfPokemon);
             String healthPoints = "" + pokemon.getHealth();
             pokemonHealthPoints.setText(healthPoints);
@@ -115,6 +114,12 @@ public class ArenaPanel extends JPanel {
 
     public void resetOver() {
         isOver = false;
+        System.out.println("Over");
+    }
+
+
+    public void setPlayer(Player player){
+        this.player = new Player();
     }
 
     public Player getPlayer() {

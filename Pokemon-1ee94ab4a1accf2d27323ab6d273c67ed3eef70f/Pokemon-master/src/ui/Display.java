@@ -21,6 +21,7 @@ public class Display extends JFrame {
     private int indexOfStage = 0;
     private WinPanel winPanel;
     private LosePanel losePanel;
+    private PokemonMenuPanel pokemonMenuPanel;
 
     public Display() throws Exception {
         setUpDisplay();
@@ -40,36 +41,51 @@ public class Display extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        timer = new Timer(100, new GameLoop(this));
+        timer = new Timer(1000, new GameLoop(this));
         timer.start();
-        setContentPane(losePanel);
+        setContentPane(playPanel);
     }
 
     public void doOneLoop() {
+        update();
+        repaint();
+    }
+
+    private void update() {
         if (arenaPanel!= null && arenaPanel.isOver()) {
-            setContentPane(losePanel);
-            this.player = new Player();
-            chooserP = new PokemonChooserPanel(player);
+            this.player = arenaPanel.getPlayer();
+            pokemonMenuPanel = new PokemonMenuPanel(player);
+            setContentPane(pokemonMenuPanel);
             arenaPanel.resetOver();
+            arenaPanel.setVisible(false);
         }
         if (chooserP != null && chooserP.hasPlayerPickedLoadout()) {
             this.player = chooserP.getPlayer();
             arenaPanel = new ArenaPanel(player, enemyPokemons[indexOfStage],enemyNames[indexOfStage]);
+            arenaPanel.setVisible(true);
             setContentPane(arenaPanel);
             chooserP.setHasPlayerPickedLoadout();
+            chooserP = null;
         }
         if(playPanel.isGameStarted()){
+            player = new Player();
             chooserP = new PokemonChooserPanel(player);
             setContentPane(chooserP);
             playPanel.setGameStarted();
         }
         if(winPanel.wantToPlayAgain()){
             setContentPane(playPanel);
+            player = new Player();
+            indexOfStage = 0;
+            arenaPanel = null;
             winPanel.reset();
         }
         if(losePanel.wantToPlayAgain()){
             setContentPane(playPanel);
+            player = new Player();
+            indexOfStage = 0;
+            arenaPanel = null;
             losePanel.reset();
         }
-        }
     }
+}

@@ -2,6 +2,7 @@ package ui.components;
 
 import ui.Display;
 import ui.panels.ArenaPanel;
+import ui.panels.StatsScreen;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +23,9 @@ public class GameLoop<T> implements ActionListener {
         }
         if(t instanceof Display){
             ((Display) t).doOneLoop();
+        }
+        if(t instanceof StatsScreen){
+            ((StatsScreen) t).doOneLoop();
         }
     }
 }

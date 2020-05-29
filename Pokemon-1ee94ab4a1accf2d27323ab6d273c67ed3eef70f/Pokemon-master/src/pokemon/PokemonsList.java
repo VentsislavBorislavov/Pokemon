@@ -3,13 +3,13 @@ package pokemon;
 import abilities.*;
 
 public class PokemonsList {
-    private static Pokemon charmander = new Pokemon("Charmander", 39, 42, 53, Type.FIRE, new FireBreath(), PokemonType.CHARMANDER);
-    private static Pokemon bulbasaur = new Pokemon("Bulbasaur", 45, 49, 49, Type.PLANT, new Overgrow(), PokemonType.BULGASAUR);
-    private static Pokemon pikachu = new Pokemon("Pikachu", 35, 40, 55, Type.AIR, new LightningBolt(), PokemonType.PIKACHU);
-    private static Pokemon squirtle = new Pokemon("Squirtle", 44, 66, 48, Type.WATER, new Torrent(), PokemonType.SQUIRTLE);
-    private static Pokemon diglett = new Pokemon("Diglett", 30, 25, 55, Type.EARTH, new SandForce(), PokemonType.DIGGLET);
+    private Pokemon charmander = new Pokemon("Charmander", 39, 42, 53, Type.FIRE, new FireBreath(), PokemonType.CHARMANDER);
+    private Pokemon bulbasaur = new Pokemon("Bulbasaur", 45, 49, 49, Type.PLANT, new Overgrow(), PokemonType.BULGASAUR);
+    private Pokemon pikachu = new Pokemon("Pikachu", 35, 40, 55, Type.AIR, new LightningBolt(), PokemonType.PIKACHU);
+    private Pokemon squirtle = new Pokemon("Squirtle", 44, 66, 48, Type.WATER, new Torrent(), PokemonType.SQUIRTLE);
+    private Pokemon diglett = new Pokemon("Diglett", 30, 25, 55, Type.EARTH, new SandForce(), PokemonType.DIGGLET);
 
-    private static Pokemon[] enemyPokemons = new Pokemon[5];
+    private Pokemon[] enemyPokemons = new Pokemon[5];
 
     public PokemonsList() {
         setUpEnemyPokemons();
@@ -24,27 +24,27 @@ public class PokemonsList {
     }
 
 
-    public static Pokemon getCharmander() {
+    public  Pokemon getCharmander() {
         return charmander;
     }
 
-    public static Pokemon getBulbasaur() {
+    public  Pokemon getBulbasaur() {
         return bulbasaur;
     }
 
-    public static Pokemon getPikachu() {
+    public  Pokemon getPikachu() {
         return pikachu;
     }
 
-    public static Pokemon getSquirtle() {
+    public  Pokemon getSquirtle() {
         return squirtle;
     }
 
-    public static Pokemon getDiglett() {
+    public  Pokemon getDiglett() {
         return diglett;
     }
 
-    public static Pokemon[] getEnemyPokemons() {
+    public  Pokemon[] getEnemyPokemons() {
         return enemyPokemons;
     }
 }

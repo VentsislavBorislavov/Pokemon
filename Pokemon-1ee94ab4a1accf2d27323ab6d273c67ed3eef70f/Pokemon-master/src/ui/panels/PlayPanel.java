@@ -1,5 +1,7 @@
 package ui.panels;
 
+import ui.components.GameButton;
+
 import javax.swing.*;
 
 public class PlayPanel extends JPanel {
@@ -7,8 +9,8 @@ public class PlayPanel extends JPanel {
     private boolean isGameStarted = false;
     public PlayPanel(){
         setLayout(null);
-        button = new JButton("Play");
-        button.setBounds(240,240,60,60);
+        button = new GameButton(250,275,100,30);
+        button.setText("Play");
         button.addActionListener(e -> isGameStarted = true);
         add(button);
     }

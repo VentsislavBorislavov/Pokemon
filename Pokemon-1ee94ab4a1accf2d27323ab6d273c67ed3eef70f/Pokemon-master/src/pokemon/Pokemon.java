@@ -17,7 +17,7 @@ public class Pokemon {
     protected Type type;
     private PokemonType pokemonType;
     protected int maxHP;
-   // protected Size size;
+    // protected Size size;
     protected List<Ability> abilityList = new ArrayList<>();
 
     public Pokemon(String defaultName, int maxHP, int defence, int attack, /*double height, double weight,*/ Type type, /*Size size,*/Ability secondAbility, PokemonType p) {
@@ -30,7 +30,7 @@ public class Pokemon {
        /* this.height = height;
         this.weight = weight;*/
         this.type = type;
-       // this.size = size;
+        // this.size = size;
 
         abilityList.add(new Punch());
         abilityList.add(secondAbility);
@@ -84,5 +84,12 @@ public class Pokemon {
 
     public void takeDamage(int damage) {
         health -= damage;
+    }
+
+    public void heal() {
+        if (health + 5 > maxHP) {
+            maxHP += 2;
+            health = maxHP;
+        } else health += 5;
     }
 }

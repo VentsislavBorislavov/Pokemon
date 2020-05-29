@@ -17,9 +17,11 @@ public class PokemonChooserPanel extends JPanel implements ActionListener {
     private PokemonImageLbl[] pokemonImageLbls = new PokemonImageLbl[5];
     private int[] choosedPokemons = new int[]{0, 0, 0, 0, 0};
     private JButton[] chooseBtns = new JButton[5];
+    PokemonsList pokemonList = new PokemonsList();
     private Pokemon[] pokemons = new Pokemon[5];
     private JButton continueBtn;
     private boolean hasPlayerPickedLoadout = false;
+
     public PokemonChooserPanel(Player player) {
         setLayout(null);
 
@@ -31,12 +33,11 @@ public class PokemonChooserPanel extends JPanel implements ActionListener {
         continueBtn.setBounds(250,0,100,30);
         continueBtn.addActionListener(this);
         add(continueBtn);
-        pokemons[0] = PokemonsList.getBulbasaur();
-        pokemons[1] = PokemonsList.getDiglett();
-        pokemons[2] = PokemonsList.getCharmander();
-        pokemons[3] = PokemonsList.getPikachu();
-        pokemons[4] = PokemonsList.getSquirtle();
-
+        pokemons[0] = pokemonList.getBulbasaur();
+        pokemons[1] = pokemonList.getDiglett();
+        pokemons[2] = pokemonList.getCharmander();
+        pokemons[3] = pokemonList.getPikachu();
+        pokemons[4] = pokemonList.getSquirtle();
 
         int x = 30, y = 120;
         for (int i = 0; i < pokemons.length; i++) {
@@ -79,9 +80,10 @@ public class PokemonChooserPanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         for (int i = 0; i < chooseBtns.length; i++) {
-            if (e.getSource() == chooseBtns[i] && player.getPokemons().size() <= 3) {
-                if (choosedPokemons[i] == 0) {
-                    player.addPokemon(pokemons[i]);
+            if (e.getSource() == chooseBtns[i]) {
+                Pokemon pokemon = pokemons[i];
+                if (choosedPokemons[i] == 0 && player.getPokemons().size() <= 3) {
+                    player.addPokemon(pokemon);
                     choosedPokemons[i] = 1;
                     pokemonImageLbls[i].setBorder(BorderFactory.createLineBorder(Color.green));
                 } else if (choosedPokemons[i] == 1) {
