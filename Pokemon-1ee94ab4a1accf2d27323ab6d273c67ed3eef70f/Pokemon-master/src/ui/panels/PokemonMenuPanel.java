@@ -1,7 +1,6 @@
 package ui.panels;
 
 import pokemon.Player;
-import pokemon.Pokemon;
 import ui.components.GameButton;
 
 import javax.swing.*;
@@ -9,11 +8,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PokemonMenuPanel extends JPanel implements ActionListener {
-    GameButton crystalsBtn;
-    GameButton statsBtn;
-    GameButton continueBtn;
-    JLabel label;
-    Player player;
+    private GameButton statsBtn;
+    private GameButton continueBtn;
+    private JLabel label;
+    private Player player;
+    private StatsScreen statsScreen;
+    private boolean continueForward = false;
 
     public PokemonMenuPanel( Player player){
         setLayout(null);
@@ -22,31 +22,42 @@ public class PokemonMenuPanel extends JPanel implements ActionListener {
         label = new JLabel("You won the fight. This is the player menu");
         label.setBounds(175, 0 , 200,30);
 
-        crystalsBtn = new GameButton(250,30,100,30);
-        statsBtn = new GameButton(250,210,100,30);
+
+        statsBtn = new GameButton(200,70,200,30);
         continueBtn = new GameButton(250,390,100,30);
 
-        crystalsBtn.setText("Use Crystal");
         statsBtn.setText("See Pokemon Stats");
         continueBtn.setText("Continue");
-        crystalsBtn.addActionListener(this);
         statsBtn.addActionListener(this);
         continueBtn.addActionListener(this);
 
-        add(crystalsBtn);
         add(statsBtn);
         add(continueBtn);
         add(label);
     }
 
+    public Player getPlayer() {
+        return player;
+    }
+
+    public boolean getContinueForward(){
+        return continueForward;
+    }
+
+    public void reset(){
+        continueForward = false;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == crystalsBtn){
 
-        }
         if(e.getSource() == statsBtn){
-            new StatsScreen(player);
+            statsScreen = new StatsScreen(player);
+            statsScreen.setVisible(true);
         }
-        if(e.getSource() == crystalsBtn);
+
+        if(e.getSource()==continueBtn){
+            continueForward = true;
+        }
     }
 }

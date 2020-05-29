@@ -55,7 +55,10 @@ public class ArenaPanel extends JPanel {
         abilityButton1 = new GameButton(400, 400, 100, 30);
         abilityButton1.addActionListener(e -> player.getPokemons().get(indexOfPokemon).takeDamage(10));
         ablitiyButton2 = new GameButton(400, 440, 100, 30);
-        ablitiyButton2.addActionListener(e -> isOver = true);
+        ablitiyButton2.addActionListener(e -> {
+            player.addCrystals(5);
+            isOver = true;
+        });
 
         dialogueLabel = new JLabel();
         dialogueLabel.setBounds(60, 400, 310, 70);

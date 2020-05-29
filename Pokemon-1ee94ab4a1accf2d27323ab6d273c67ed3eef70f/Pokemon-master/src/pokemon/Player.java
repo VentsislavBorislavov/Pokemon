@@ -25,8 +25,12 @@ public class Player {
         return crystals;
     }
 
-    public void setCrystals(int crystals) {
+    public void addCrystals(int crystals) {
         this.crystals += crystals;
+    }
+
+    public void useCrystal(){
+        crystals--;
     }
 
     public List<Pokemon> getPokemons() {

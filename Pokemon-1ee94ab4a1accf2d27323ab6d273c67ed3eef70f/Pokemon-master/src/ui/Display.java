@@ -37,7 +37,6 @@ public class Display extends JFrame {
         setTitle("Pokemon Tournament");
         setIconImage(new ImageIcon(Constants.POKEMON_ICON_URL).getImage());
         setResizable(false);
-        setVisible(true);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -86,6 +85,13 @@ public class Display extends JFrame {
             indexOfStage = 0;
             arenaPanel = null;
             losePanel.reset();
+        }
+        if(pokemonMenuPanel != null && pokemonMenuPanel.getContinueForward()){
+            this.player = pokemonMenuPanel.getPlayer();
+            indexOfStage++;
+            arenaPanel = new ArenaPanel(player,enemyPokemons[indexOfStage],enemyNames[indexOfStage]);
+            setContentPane(arenaPanel);
+            pokemonMenuPanel.reset();
         }
     }
 }
