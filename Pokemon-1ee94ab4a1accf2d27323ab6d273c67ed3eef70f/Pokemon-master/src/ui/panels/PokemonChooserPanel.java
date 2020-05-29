@@ -1,8 +1,10 @@
-package ui;
+package ui.panels;
 
 import pokemon.Player;
 import pokemon.Pokemon;
 import pokemon.PokemonsList;
+import ui.components.PokemonImageCreator;
+import ui.components.PokemonImageLbl;
 
 import javax.swing.*;
 import java.awt.*;

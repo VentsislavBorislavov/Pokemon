@@ -1,4 +1,7 @@
-package ui;
+package ui.components;
+
+import ui.Display;
+import ui.panels.ArenaPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,7 +10,7 @@ public class GameLoop<T> implements ActionListener {
 
     T t;
 
-    GameLoop(T t){
+    public GameLoop(T t){
         this.t = t;
     }
 

@@ -1,15 +1,19 @@
-package ui;
+package ui.panels;
 
 import pokemon.Player;
 import pokemon.Pokemon;
+import ui.components.Constants;
+import ui.components.GameButton;
+import ui.components.GameLoop;
+import ui.components.PokemonImageCreator;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class ArenaPanel extends JPanel {
 
-    private AbilityButton abilityButton1;
-    private AbilityButton ablitiyButton2;
+    private GameButton abilityButton1;
+    private GameButton ablitiyButton2;
     private JButton switchBtn;
     private JPanel dialoguePanel;
     private JLabel dialogueLabel;
@@ -40,7 +44,7 @@ public class ArenaPanel extends JPanel {
 
         pokemon = player.getPokemons().get(indexOfPokemon);
 
-        switchBtn = new AbilityButton(400,360,100,30);
+        switchBtn = new GameButton(400,360,100,30);
         switchBtn.setText("Switch");
         switchBtn.addActionListener(e -> {
             if(indexOfPokemon< player.getPokemons().size() - 1)
@@ -48,9 +52,9 @@ public class ArenaPanel extends JPanel {
             else indexOfPokemon = 0;
         });
 
-        abilityButton1 = new AbilityButton(400, 400, 100, 30);
+        abilityButton1 = new GameButton(400, 400, 100, 30);
         abilityButton1.addActionListener(e -> player.getPokemons().get(indexOfPokemon).takeDamage(10));
-        ablitiyButton2 = new AbilityButton(400, 440, 100, 30);
+        ablitiyButton2 = new GameButton(400, 440, 100, 30);
         ablitiyButton2.addActionListener(e -> System.out.println("Clicked"));
 
         dialogueLabel = new JLabel();
@@ -101,6 +105,7 @@ public class ArenaPanel extends JPanel {
     private void diePokemon(){
         if(player.getPokemons().get(indexOfPokemon).getHealth() <= 0){
             player.removePokemon(player.getPokemons().get(indexOfPokemon));
+            indexOfPokemon = 0;
         }
     }
 

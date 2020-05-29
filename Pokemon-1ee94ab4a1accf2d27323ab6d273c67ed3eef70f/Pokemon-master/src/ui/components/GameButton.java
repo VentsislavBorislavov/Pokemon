@@ -1,10 +1,10 @@
-package ui;
+package ui.components;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class AbilityButton extends JButton {
-    public AbilityButton(int x, int y, int width,int height) {
+public class GameButton extends JButton {
+    public GameButton(int x, int y, int width, int height) {
         setBounds(x, y, width, height);
         setBorder(BorderFactory.createEmptyBorder());
         setBackground(Color.GRAY);

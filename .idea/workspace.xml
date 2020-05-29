@@ -2,36 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1c001ee-9eb7-4b20-8b65-a4ce25ca85d8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/pokemon/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/pokemon/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/pokemon/Charmander.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/pokemon/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/pokemon/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/pokemon/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/pokemon/Pokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/pokemon/PokemonName.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/pokemon/PokemonType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/pokemon/PokemonsList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/pokemon/PokemonsList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/ArenaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/ArenaPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/AbilityButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/components/GameButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/ArenaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/panels/ArenaPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/components/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/PlayPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/PlayPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/PokemonChooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/PokemonChooserPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/PokemonImageCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/PokemonImageCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/PokemonImageLbl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/PokemonImageLbl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/pokemon/Battle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/pokemon/Charmander.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/pokemon/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/pokemon/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/pokemon/Pokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/pokemon/Pokemon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/pokemon/PokemonMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/pokemon/PokemonMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/pokemon/PokemonName.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/pokemon/PokemonsList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/pokemon/PokemonsList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/ArenaPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/ArenaPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/GameLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/components/GameLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/LosePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/panels/LosePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/PlayPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/panels/PlayPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/PokemonChooserPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/panels/PokemonChooserPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/PokemonImageCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/components/PokemonImageCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/PokemonImageLbl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/components/PokemonImageLbl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/PokemonMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/panels/PokemonMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/WinPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pokemon-1ee94ab4a1accf2d27323ab6d273c67ed3eef70f/Pokemon-master/src/ui/panels/WinPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/AbilityButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/ArenaPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/Constants.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/Display.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/PlayPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/PlayPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/PokemonChooser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/PokemonImageCreator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/PokemonImageCreator$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/PokemonImageCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/PokemonImageCreator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/PokemonImageLbl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/PokemonImageLbl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/GameLoop.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/PlayPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/PokemonChooserPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/PokemonImageCreator$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/PokemonImageCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/POKEMON-MASTER(2)/ui/PokemonImageLbl.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +70,7 @@
       <module name="POKEMON-MASTER(2)" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ui.*" />
+          <option name="PATTERN" value="ui.components.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -106,35 +99,35 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="668" y="219" key="#com.intellij.ide.util.MemberChooser" timestamp="1590777855408">
+    <state x="668" y="219" key="#com.intellij.ide.util.MemberChooser" timestamp="1590780900406">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="445" y="207" key="#com.intellij.ide.util.MemberChooser/0.0.1280.984@0.0.1280.984" timestamp="1590697043604" />
-    <state x="668" y="219" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590777855408" />
-    <state x="657" y="122" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590773883052">
+    <state x="668" y="219" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590780900406" />
+    <state x="657" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590778251533">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="657" y="122" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590773883052" />
-    <state width="1877" height="201" key="GridCell.Tab.0.bottom" timestamp="1590777901721">
+    <state x="657" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590778251533" />
+    <state width="1877" height="201" key="GridCell.Tab.0.bottom" timestamp="1590781584351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="325" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1590745542064" />
-    <state width="1877" height="201" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590777901721" />
-    <state width="1877" height="201" key="GridCell.Tab.0.center" timestamp="1590777901721">
+    <state width="1877" height="201" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590781584351" />
+    <state width="1877" height="201" key="GridCell.Tab.0.center" timestamp="1590781584351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="325" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1590745542064" />
-    <state width="1877" height="201" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590777901721" />
-    <state width="1877" height="201" key="GridCell.Tab.0.left" timestamp="1590777901721">
+    <state width="1877" height="201" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590781584351" />
+    <state width="1877" height="201" key="GridCell.Tab.0.left" timestamp="1590781584351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="325" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1590745542064" />
-    <state width="1877" height="201" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590777901721" />
-    <state width="1877" height="201" key="GridCell.Tab.0.right" timestamp="1590777901721">
+    <state width="1877" height="201" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590781584351" />
+    <state width="1877" height="201" key="GridCell.Tab.0.right" timestamp="1590781584351">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="325" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1590745542064" />
-    <state width="1877" height="201" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590777901721" />
+    <state width="1877" height="201" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590781584351" />
     <state width="1237" height="325" key="GridCell.Tab.1.bottom" timestamp="1590745542065">
       <screen x="0" y="0" width="1280" height="984" />
     </state>
