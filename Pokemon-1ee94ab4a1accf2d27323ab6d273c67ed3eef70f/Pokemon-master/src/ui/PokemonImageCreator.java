@@ -1,12 +1,12 @@
 package ui;
 
-import pokemon.PokemonName;
+import pokemon.PokemonType;
 
 public class PokemonImageCreator {
     private PokemonImageCreator(){
     }
 
-    public static String getPokemonImage(PokemonName pokemonName){
+    public static String getPokemonImage(PokemonType pokemonName){
         switch (pokemonName){
             case DIGGLET:
                 return Constants.DIGGLET_IMAGE_URL;

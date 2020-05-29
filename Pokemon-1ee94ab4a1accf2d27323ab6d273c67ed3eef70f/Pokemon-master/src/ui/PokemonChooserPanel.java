@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PokemonChooser extends JPanel implements ActionListener {
+public class PokemonChooserPanel extends JPanel implements ActionListener {
 
     private Player player;
     private PokemonImageLbl[] pokemonImageLbls = new PokemonImageLbl[5];
@@ -18,7 +18,7 @@ public class PokemonChooser extends JPanel implements ActionListener {
     private Pokemon[] pokemons = new Pokemon[5];
     private JButton continueBtn;
     private boolean hasPlayerPickedLoadout = false;
-    public PokemonChooser(Player player) {
+    public PokemonChooserPanel(Player player) {
         setLayout(null);
 
         this.player = player;
@@ -38,12 +38,12 @@ public class PokemonChooser extends JPanel implements ActionListener {
 
         int x = 30, y = 120;
         for (int i = 0; i < pokemons.length; i++) {
-            images[i] = new ImageIcon(PokemonImageCreator.getPokemonImage(pokemons[i].getPokemonName()));
+            images[i] = new ImageIcon(PokemonImageCreator.getPokemonImage(pokemons[i].getPokemonType()));
             if (x > 420) {
                 x = 120;
                 y += 180;
             }
-            pokemonImageLbls[i] = new PokemonImageLbl(images[i], x, y, Constants.POKEMON_WIDTH, Constants.POKEMON_HEIGHT);
+            pokemonImageLbls[i] = new PokemonImageLbl(images[i], x, y);
             x += 180;
 
             setUpButtons(i);
@@ -66,6 +66,10 @@ public class PokemonChooser extends JPanel implements ActionListener {
         return hasPlayerPickedLoadout;
     }
 
+    public void setHasPlayerPickedLoadout() {
+        this.hasPlayerPickedLoadout = false;
+    }
+
     public Player getPlayer() {
         return player;
     }
@@ -75,7 +79,6 @@ public class PokemonChooser extends JPanel implements ActionListener {
         for (int i = 0; i < chooseBtns.length; i++) {
             if (e.getSource() == chooseBtns[i] && player.getPokemons().size() <= 3) {
                 if (choosedPokemons[i] == 0) {
-                    System.out.println("Picked " + pokemons[i].getName() + "\n" + player.getPokemons().size());
                     player.addPokemon(pokemons[i]);
                     choosedPokemons[i] = 1;
                     pokemonImageLbls[i].setBorder(BorderFactory.createLineBorder(Color.green));

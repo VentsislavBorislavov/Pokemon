@@ -8,7 +8,7 @@ public class PlayPanel extends JPanel {
     public PlayPanel(){
         setLayout(null);
         button = new JButton("Play");
-        button.setBounds(250,250,50,50);
+        button.setBounds(240,240,60,60);
         button.addActionListener(e -> isGameStarted = true);
         add(button);
     }

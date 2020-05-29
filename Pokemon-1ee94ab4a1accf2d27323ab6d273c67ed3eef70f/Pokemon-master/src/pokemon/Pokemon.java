@@ -1,6 +1,7 @@
 package pokemon;
 
 import abilities.Ability;
+import abilities.Punch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,14 +15,14 @@ public class Pokemon {
     protected double height;
     protected double weight;
     protected Type type;
-    PokemonName pokemonName;
+    private PokemonType pokemonType;
     protected int maxHP;
    // protected Size size;
     protected List<Ability> abilityList = new ArrayList<>();
 
-    public Pokemon(String defaultName, int maxHP, int defence, int attack, /*double height, double weight,*/ Type type, /*Size size,*/Ability firstAbility, Ability secondAbility, PokemonName p) {
+    public Pokemon(String defaultName, int maxHP, int defence, int attack, /*double height, double weight,*/ Type type, /*Size size,*/Ability secondAbility, PokemonType p) {
         this.defaultName = defaultName;
-        pokemonName = p;
+        pokemonType = p;
         this.maxHP = maxHP;
         this.health = maxHP;
         this.defence = defence;
@@ -31,7 +32,7 @@ public class Pokemon {
         this.type = type;
        // this.size = size;
 
-        abilityList.add(firstAbility);
+        abilityList.add(new Punch());
         abilityList.add(secondAbility);
     }
 
@@ -49,7 +50,7 @@ public class Pokemon {
         return size;
     }*/
 
-    public double getHealth() {
+    public int getHealth() {
         return health;
     }
 
@@ -73,8 +74,8 @@ public class Pokemon {
         return type;
     }
 
-    public PokemonName getPokemonName() {
-        return pokemonName;
+    public PokemonType getPokemonType() {
+        return pokemonType;
     }
 
     public void setName(String name) {

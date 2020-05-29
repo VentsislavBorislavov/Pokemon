@@ -8,9 +8,9 @@ public class Enemy {
     private Pokemon enemyPokemon;
     private PokemonsList pokemonsList = new PokemonsList();
 
-    public Enemy(String enemyName) {
+    public Enemy(String enemyName, Pokemon enemyPokemon) {
         this.enemyName = enemyName;
-      this.enemyPokemon = new Pokemon("Charmander",30,30,30,Type.FIRE,new Punch(),new FireBreath(),PokemonName.CHARMANDER) ;
+        this.enemyPokemon = enemyPokemon;
     }
 
     public String getEnemyName() {

@@ -1,6 +1,6 @@
 package pokemon;
 
-public enum  PokemonName {
+public enum PokemonType {
     PIKACHU,
     CHARMANDER,
     SQUIRTLE,
