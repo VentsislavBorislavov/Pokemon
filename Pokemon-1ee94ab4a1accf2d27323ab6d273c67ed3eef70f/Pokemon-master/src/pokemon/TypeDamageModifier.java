@@ -3,12 +3,12 @@ package pokemon;
 import java.util.HashMap;
 
 public class TypeDamageModifier {
-    HashMap<Type,HashMap<Type,Double>> firstMap = new HashMap<Type,HashMap<Type,Double>>();
-    HashMap<Type,Double> secondMapEarth = new HashMap<>();
-    HashMap<Type,Double> secondMapPlant = new HashMap<>();
-    HashMap<Type,Double> secondMapWater = new HashMap<>();
-    HashMap<Type,Double> secondMapAir = new HashMap<>();
-    HashMap<Type,Double> secondMapFire = new HashMap<>();
+    private HashMap<Type,HashMap<Type,Double>> firstMap = new HashMap<Type,HashMap<Type,Double>>();
+    private HashMap<Type,Double> secondMapEarth = new HashMap<>();
+    private HashMap<Type,Double> secondMapPlant = new HashMap<>();
+    private HashMap<Type,Double> secondMapWater = new HashMap<>();
+    private HashMap<Type,Double> secondMapAir = new HashMap<>();
+    private HashMap<Type,Double> secondMapFire = new HashMap<>();
     public TypeDamageModifier() {
         //=================================
         secondMapEarth.put(Type.EARTH,1.0);
@@ -87,7 +87,7 @@ public class TypeDamageModifier {
         firstMap.put(Type.FIRE, secondMapFire);
 
     }
-    public double getDamageModifier(Type firstKey,Type secondKey){
+    public  double getDamageModifier(Type firstKey,Type secondKey){
         return firstMap.get(firstKey).get(secondKey);
     }
 

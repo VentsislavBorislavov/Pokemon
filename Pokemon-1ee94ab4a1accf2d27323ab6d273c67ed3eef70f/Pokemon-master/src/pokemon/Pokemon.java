@@ -92,4 +92,8 @@ public class Pokemon {
             health = maxHP;
         } else health += 5;
     }
+
+    public void setHealth(int i){
+        health = i;
+    }
 }

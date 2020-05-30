@@ -1,10 +1,5 @@
 package ui.panels;
 
-import ui.components.GameButton;
-
-import javax.swing.*;
-import java.awt.*;
-
 public class WinPanel extends FinalPanel {
 
     public WinPanel(){

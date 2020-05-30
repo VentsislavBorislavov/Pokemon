@@ -1,6 +1,6 @@
 package ui.components;
 
-import ui.Display;
+import ui.App;
 import ui.panels.ArenaPanel;
 import ui.panels.StatsScreen;
 
@@ -21,8 +21,8 @@ public class GameLoop<T> implements ActionListener {
         if(t instanceof ArenaPanel){
             ((ArenaPanel) t).doOneLoop();
         }
-        if(t instanceof Display){
-            ((Display) t).doOneLoop();
+        if(t instanceof App){
+            ((App) t).doOneLoop();
         }
         if(t instanceof StatsScreen){
             ((StatsScreen) t).doOneLoop();

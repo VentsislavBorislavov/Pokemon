@@ -3,6 +3,7 @@ package ui.panels;
 import pokemon.Player;
 import pokemon.Pokemon;
 import pokemon.PokemonsList;
+import ui.components.Constants;
 import ui.components.PokemonImageCreator;
 import ui.components.PokemonImageLbl;
 
@@ -20,10 +21,13 @@ public class PokemonChooserPanel extends JPanel implements ActionListener {
     PokemonsList pokemonList = new PokemonsList();
     private Pokemon[] pokemons = new Pokemon[5];
     private JButton continueBtn;
+    private JLabel askForNameLbl;
+    private JTextField nameField;
     private boolean hasPlayerPickedLoadout = false;
 
     public PokemonChooserPanel(Player player) {
         setLayout(null);
+        setPreferredSize(new Dimension(Constants.GAME_WIDTH, Constants.GAME_HEIGHT));
 
         this.player = player;
 
@@ -32,7 +36,13 @@ public class PokemonChooserPanel extends JPanel implements ActionListener {
         continueBtn.setVisible(false);
         continueBtn.setBounds(250,0,100,30);
         continueBtn.addActionListener(this);
-        add(continueBtn);
+
+        askForNameLbl = new JLabel("Your name:");
+        askForNameLbl.setBounds(10,0,100,30);
+
+        nameField = new JTextField();
+        nameField.setBounds(120,0,100,30);
+
         pokemons[0] = pokemonList.getBulbasaur();
         pokemons[1] = pokemonList.getDiglett();
         pokemons[2] = pokemonList.getCharmander();
@@ -53,7 +63,9 @@ public class PokemonChooserPanel extends JPanel implements ActionListener {
             add(chooseBtns[i]);
             add(pokemonImageLbls[i]);
         }
-
+        add(askForNameLbl);
+        add(nameField);
+        add(continueBtn);
     }
 
     private void setUpButtons(int i) {
@@ -97,6 +109,7 @@ public class PokemonChooserPanel extends JPanel implements ActionListener {
             }
         }
         if(e.getSource()==continueBtn){
+            player.setPlayerName(nameField.getText());
             hasPlayerPickedLoadout = true;
         }
     }

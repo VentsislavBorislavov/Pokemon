@@ -1,7 +1,6 @@
 package ui.panels;
 
 import pokemon.Player;
-import pokemon.Pokemon;
 import pokemon.PokemonStats;
 import ui.components.Constants;
 import ui.components.GameButton;
@@ -22,10 +21,12 @@ public class StatsScreen extends JFrame implements ActionListener {
     private Player player;
     private JLabel result;
     private GameButton healBtn;
+    private GameButton setPokemonNameBtn;
+    private JTextField renamePokemonField;
     Timer timer;
 
     public StatsScreen(Player player) {
-        setSize(Constants.GAME_WIDTH, Constants.GAME_HEIGHT);
+        setSize(Constants.GAME_WIDTH- 100, Constants.GAME_HEIGHT - 100);
         setTitle("Pokemon Stats");
         setIconImage(new ImageIcon(Constants.POKEMON_ICON_URL).getImage());
         setResizable(false);
@@ -33,20 +34,28 @@ public class StatsScreen extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        healBtn = new GameButton(360, 360, 100, 30);
+        setPokemonNameBtn = new GameButton(310,400,100,30);
+        setPokemonNameBtn.setText("Rename");
+        setPokemonNameBtn.addActionListener(this);
+
+        renamePokemonField = new JTextField();
+        renamePokemonField.setBounds(310,350,100,30);
+
+        healBtn = new GameButton(310, 310, 100, 30);
         healBtn.setText("Heal");
         healBtn.addActionListener(this);
 
         this.player = player;
 
         result = new JLabel();
-        result.setBounds(360, 180, 200, 200);
+        result.setBounds(310, 130, 200, 200);
         result.setForeground(Color.BLACK);
         timer = new Timer(10, new GameLoop(this));
 
         image = new JLabel(new ImageIcon(Constants.PIKACHU_IMAGE_URL));
-        image.setBounds(110, 180, Constants.POKEMON_WIDTH, Constants.POKEMON_HEIGHT);
-        switchBtn = new GameButton(130, 360, 100, 30);
+        image.setBounds(70, 130, Constants.POKEMON_WIDTH, Constants.POKEMON_HEIGHT);
+
+        switchBtn = new GameButton(80, 310, 100, 30);
         switchBtn.setText("Switch");
         switchBtn.addActionListener(this);
 
@@ -54,7 +63,8 @@ public class StatsScreen extends JFrame implements ActionListener {
         add(switchBtn);
         add(result);
         add(healBtn);
-
+        add(setPokemonNameBtn);
+        add(renamePokemonField);
         timer.start();
 
     }
@@ -77,6 +87,9 @@ public class StatsScreen extends JFrame implements ActionListener {
                 player.getPokemons().get(pokemonIndex).heal();
                 player.useCrystal();
             }
+        }
+        if(e.getSource() == setPokemonNameBtn){
+            player.getPokemons().get(pokemonIndex).setName(renamePokemonField.getText());
         }
     }
 }

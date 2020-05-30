@@ -1,7 +1,5 @@
 package ui.panels;
 
-import javax.swing.*;
-
 public class LosePanel extends FinalPanel {
 
     public LosePanel(){

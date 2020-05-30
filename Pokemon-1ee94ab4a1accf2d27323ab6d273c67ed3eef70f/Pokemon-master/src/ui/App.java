@@ -1,5 +1,6 @@
 package ui;
 
+import pokemon.Enemy;
 import pokemon.Player;
 import pokemon.Pokemon;
 import pokemon.PokemonsList;
@@ -9,21 +10,23 @@ import ui.panels.*;
 
 import javax.swing.*;
 
-public class Display extends JFrame {
+public class App extends JFrame {
 
     private Player player;
     private Timer timer;
     private ArenaPanel arenaPanel;
-    private PokemonChooserPanel chooserP;
+    private PokemonChooserPanel pokemonChooserPanel;
     private PlayPanel playPanel;
-    private final Pokemon[] enemyPokemons = new PokemonsList().getEnemyPokemons();
+    private PokemonsList pokemonsList = new PokemonsList();
+    private Pokemon[] enemyPokemons = pokemonsList.getEnemyPokemons();
     private String[] enemyNames = {"Team Rocket","Maxie", "Cyrus", "Giovanni", "Team Flare"};
     private int indexOfStage = 0;
     private WinPanel winPanel;
     private LosePanel losePanel;
     private PokemonMenuPanel pokemonMenuPanel;
+    private Enemy[] enemies = new Enemy[5];
 
-    public Display() throws Exception {
+    public App() throws Exception {
         setUpDisplay();
     }
 
@@ -33,6 +36,8 @@ public class Display extends JFrame {
         playPanel = new PlayPanel();
         winPanel = new WinPanel();
         losePanel = new LosePanel();
+
+        setUpEnemies();
         setSize(Constants.GAME_WIDTH, Constants.GAME_HEIGHT);
         setTitle("Pokemon Tournament");
         setIconImage(new ImageIcon(Constants.POKEMON_ICON_URL).getImage());
@@ -40,9 +45,15 @@ public class Display extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
-        timer = new Timer(1000, new GameLoop(this));
+        timer = new Timer(10, new GameLoop(this));
         timer.start();
         setContentPane(playPanel);
+    }
+
+    private void setUpEnemies() {
+        for (int i = 0; i < enemies.length; i++) {
+            enemies[i] = new Enemy(enemyNames[i],enemyPokemons[i]);
+        }
     }
 
     public void doOneLoop() {
@@ -52,24 +63,33 @@ public class Display extends JFrame {
 
     private void update() {
         if (arenaPanel!= null && arenaPanel.isOver()) {
-            this.player = arenaPanel.getPlayer();
-            pokemonMenuPanel = new PokemonMenuPanel(player);
-            setContentPane(pokemonMenuPanel);
-            arenaPanel.resetOver();
-            arenaPanel.setVisible(false);
+            if(arenaPanel.hasWon()){
+                if(indexOfStage==4){
+                    setContentPane(winPanel);
+                }else {
+                    this.player = arenaPanel.getPlayer();
+                    pokemonMenuPanel = new PokemonMenuPanel(player);
+                    setContentPane(pokemonMenuPanel);
+                }
+                arenaPanel.resetOver();
+                arenaPanel.resetHasWon();
+            }else {
+                setContentPane(losePanel);
+                arenaPanel.resetOver();
+                arenaPanel.setVisible(false);
+            }
         }
-        if (chooserP != null && chooserP.hasPlayerPickedLoadout()) {
-            this.player = chooserP.getPlayer();
-            arenaPanel = new ArenaPanel(player, enemyPokemons[indexOfStage],enemyNames[indexOfStage]);
+        if (pokemonChooserPanel != null && pokemonChooserPanel.hasPlayerPickedLoadout()) {
+            this.player = pokemonChooserPanel.getPlayer();
+            arenaPanel = new ArenaPanel(player, enemies[indexOfStage]);
             arenaPanel.setVisible(true);
             setContentPane(arenaPanel);
-            chooserP.setHasPlayerPickedLoadout();
-            chooserP = null;
+            pokemonChooserPanel.setHasPlayerPickedLoadout();
         }
         if(playPanel.isGameStarted()){
             player = new Player();
-            chooserP = new PokemonChooserPanel(player);
-            setContentPane(chooserP);
+            pokemonChooserPanel = new PokemonChooserPanel(player);
+            setContentPane(pokemonChooserPanel);
             playPanel.setGameStarted();
         }
         if(winPanel.wantToPlayAgain()){
@@ -89,7 +109,6 @@ public class Display extends JFrame {
         if(pokemonMenuPanel != null && pokemonMenuPanel.getContinueForward()){
             this.player = pokemonMenuPanel.getPlayer();
             indexOfStage++;
-            arenaPanel = new ArenaPanel(player,enemyPokemons[indexOfStage],enemyNames[indexOfStage]);
             setContentPane(arenaPanel);
             pokemonMenuPanel.reset();
         }
