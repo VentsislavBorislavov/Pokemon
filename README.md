@@ -26,15 +26,15 @@
 
 # 5. За кода.
 Ability() - parent class за уменията на покемоните.
-Pokemon()
-PokemonList()
-Enemy()
-EnemyList()
-Battle()
-Type()
-TypeDamageModifier()
-PokemonHospital
-Game();
+Pokemon().
+PokemonList().
+Enemy().
+EnemyList().
+Battle().
+Type().
+TypeDamageModifier().
+PokemonHospital().
+Game().
 
 # 6. Неща за подобрение.
 Много
