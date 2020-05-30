@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-    private String playerName;
+    private String playerName = "Player";
     private int crystals;
     private List<Pokemon> pokemons = new ArrayList<>();
 

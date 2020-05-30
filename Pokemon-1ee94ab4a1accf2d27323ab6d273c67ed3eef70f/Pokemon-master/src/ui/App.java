@@ -109,6 +109,7 @@ public class App extends JFrame {
         if(pokemonMenuPanel != null && pokemonMenuPanel.getContinueForward()){
             this.player = pokemonMenuPanel.getPlayer();
             indexOfStage++;
+            arenaPanel = new ArenaPanel(player,enemies[indexOfStage]);
             setContentPane(arenaPanel);
             pokemonMenuPanel.reset();
         }

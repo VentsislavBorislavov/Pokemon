@@ -150,7 +150,7 @@ public class ArenaPanel extends JPanel implements ActionListener {
         }
         if(turn%2==0){
             player.getPokemons().get(indexOfPokemon).takeDamage(DamageCalculator.calculateDamage(enemy.getEnemyPokemon(),pokemon,0));
-            dialogueLabel.setText(enemy.getEnemyName() + "Attacked with " + enemy.getEnemyPokemon().getName() + "with " + enemy.getEnemyPokemon().getAbilityList().get(0).getAbilityName());
+            dialogueLabel.setText(enemy.getEnemyName() + " attacked with " + enemy.getEnemyPokemon().getName() + " with " + enemy.getEnemyPokemon().getAbilityList().get(0).getAbilityName());
             turn++;
         }
     }
@@ -159,12 +159,12 @@ public class ArenaPanel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==abilityButton1 && turn%2==1){
             enemy.getEnemyPokemon().takeDamage(DamageCalculator.calculateDamage(pokemon,enemy.getEnemyPokemon(),0));
-            dialogueLabel.setText(player.getPlayerName() + "Attacked with " + pokemon.getName() + " with " + pokemon.getAbilityList().get(0).getAbilityName());
+            dialogueLabel.setText(player.getPlayerName() + " attacked with " + pokemon.getName() + " with " + pokemon.getAbilityList().get(0).getAbilityName());
             turn++;
         }
         if(e.getSource()==ablitiyButton2 && turn%2==1){
             enemy.getEnemyPokemon().takeDamage(DamageCalculator.calculateDamage(pokemon,enemy.getEnemyPokemon(),1));
-            dialogueLabel.setText(player.getPlayerName() + "Attacked with " + pokemon.getName() + " with " + pokemon.getAbilityList().get(1).getAbilityName());
+            dialogueLabel.setText(player.getPlayerName() + " attacked with " + pokemon.getName() + " with " + pokemon.getAbilityList().get(1).getAbilityName());
             turn++;
         }
     }
